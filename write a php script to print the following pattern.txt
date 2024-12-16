@@ -1,0 +1,19 @@
+<?php
+//Total Number of Rows for the pattern
+$rows = 5;
+for($i = $rows; $i > 0; $i--)
+{
+ //printing leading spaces
+ for($j = $rows - $i; $j > 0; $j--)
+ {
+  echo "&nbsp;";// Non-breaking space for HTML output
+ }
+ //printing asterisks
+ for($k=0; $k < $i; $k++)
+ {
+  echo "*";
+ }
+ // Move to the next Line
+ echo "<br>";
+}
+?>

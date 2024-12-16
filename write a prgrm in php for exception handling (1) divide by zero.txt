@@ -1,0 +1,38 @@
+<?php
+function divide($numerator, $denominator)
+{
+if($denominator == 0)
+{
+throw new Exception("Cannot divide by zero");
+}
+return $numerator / $denominator;
+}
+
+function checkDateFormat($date, $format = 'y-m-d')
+{
+$dateTime = DateTime::createFromFormat($format,$date);
+if(!$dateTime || $dateTime->format($format) != $date)
+{
+ throw new Exception("Invalid date Format.");
+}
+echo "The Date" . date . "is valid.<br>";
+return true;
+}
+try
+{
+echo divide(10,2) . "<br>";
+echo divide(10,0) . "<br>";
+}
+catch(Exception $e)
+{
+echo "Division error:" . $e->getMessage() . "<br>";
+}
+try{
+checkDateFormat("2024-11-16");
+checkDateFormat("16/11/2024");
+}
+catch(Exception $e)
+{
+echo "Date error:" . $e->getMessage() . "<br>";
+}
+?>
